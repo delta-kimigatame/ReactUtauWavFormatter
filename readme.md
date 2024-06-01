@@ -20,3 +20,6 @@ UTAU 公式サイト(http://utau2008.web.fc2.com/)
 
 # 公開先
 https://k-uta.jp/UtauWavFormatter/
+
+# ドキュメント
+https://delta-kimigatame.github.io/ReactUtauWavFormatter/
