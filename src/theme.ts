@@ -1,5 +1,5 @@
 /**全体のテーマを設定する。 */
-import { purple, grey, blueGrey, red } from "@mui/material/colors";
+import { deepPurple, grey, blueGrey, red } from "@mui/material/colors";
 import { ThemeOptions } from "@mui/material/styles";
 import { PaletteMode } from "@mui/material";
 
@@ -9,8 +9,16 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
     ...(mode === "light"
       ? {
           // palette values for light mode
-          primary: purple,
-          secondary: red,
+          primary:{
+            light:deepPurple[100],
+            main:deepPurple[300],
+            dark:deepPurple[500]
+          } ,
+          secondary:{
+            light:red[100],
+            main:red[300],
+            dark:red[500]
+          } ,
           text: {
             primary: grey[900],
             secondary: grey[800],
@@ -22,8 +30,16 @@ export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
         }
       : {
           // palette values for dark mode
-          primary: purple,
-          secondary: red,
+          primary:{
+            light:deepPurple[100],
+            main:deepPurple[300],
+            dark:deepPurple[500]
+          } ,
+          secondary:{
+            light:red[100],
+            main:red[300],
+            dark:red[500]
+          },
           text: {
             primary: "#fff",
             secondary: grey[500],
