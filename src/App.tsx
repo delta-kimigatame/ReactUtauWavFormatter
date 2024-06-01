@@ -7,7 +7,7 @@ import { useCookies } from "react-cookie";
 
 import Paper from "@mui/material/Paper";
 
-import { getDesignTokens } from "./theme";
+import { getDesignTokens } from "./settings/theme";
 import { Header } from "./Header";
 import { FileSelectButton } from "./FileSelectButton";
 import { DownloadButton } from "./DownloadButton";

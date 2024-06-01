@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
 import JSZip from "jszip";
 import { Wave } from "utauwav";
-import { NormalizeJP } from "./FilenameNormalize";
+import { NormalizeJP } from "./lib/FilenameNormalize";
 
 export const FileSelectButton: React.FC<Props> = (props) => {
   const inputRef = React.useRef(null);

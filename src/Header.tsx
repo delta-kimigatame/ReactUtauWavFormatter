@@ -10,7 +10,7 @@ import ModeNightIcon from "@mui/icons-material/ModeNight";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import Box from "@mui/material/Box";
 
-import { product_name } from "./setting";
+import { product_name } from "./settings/setting";
 
 export const Header: React.FC<Props> = (props) => {
   return (
