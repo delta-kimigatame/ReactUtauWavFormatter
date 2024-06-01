@@ -5,8 +5,13 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useCookies } from "react-cookie";
 
+import Paper from "@mui/material/Paper";
+
 import { getDesignTokens } from "./theme";
 import { Header } from "./Header";
+import { FileSelectButton } from "./FileSelectButton";
+import { DownloadButton } from "./DownloadButton";
+import { LogPaper } from "./LogPaper";
 
 /**
  * Reactのエンドポイント
@@ -38,10 +43,25 @@ export const App: React.FC = () => {
   );
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
   React.useMemo(() => setCookie("mode", mode), [mode]);
+
+  const [processing, setProcessing] = React.useState<boolean>(false);
+  const [zip, setZip] = React.useState<string | null>(null);
+  const [logs, setLogs] = React.useState<Array<string>>([]);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Header mode={mode} setMode={setMode} />
+      <Paper sx={{ flexGrow: 1, m: 2, p: 1 }} elevation={3}>
+        <FileSelectButton
+          processing={processing}
+          setProcessing={setProcessing}
+          setZip={setZip}
+          logs={logs}
+          setLogs={setLogs}
+        />
+        <DownloadButton zip={zip} />
+      </Paper>
+      <LogPaper logs={logs} />
     </ThemeProvider>
   );
 };
