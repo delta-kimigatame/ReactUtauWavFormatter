@@ -12,6 +12,7 @@ import { Header } from "./Header";
 import { FileSelectButton } from "./FileSelectButton";
 import { DownloadButton } from "./DownloadButton";
 import { LogPaper } from "./LogPaper";
+import { Footer } from "./Fotter";
 
 /**
  * Reactのエンドポイント
@@ -62,6 +63,7 @@ export const App: React.FC = () => {
         <DownloadButton zip={zip} />
       </Paper>
       <LogPaper logs={logs} />
+      <Footer theme={theme}/>
     </ThemeProvider>
   );
 };
