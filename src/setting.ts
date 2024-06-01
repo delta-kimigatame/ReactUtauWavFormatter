@@ -1,0 +1,1 @@
+export const product_name:string = "UTAU wav最適化"
