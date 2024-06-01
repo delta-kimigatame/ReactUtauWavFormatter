@@ -14,7 +14,7 @@ import { product_name } from "./setting";
 
 export const Header: React.FC<Props> = (props) => {
   return (
-    <AppBar>
+    <AppBar position='relative'>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Button variant="text" color="inherit">
           <Typography variant="subtitle2">{product_name}</Typography>
