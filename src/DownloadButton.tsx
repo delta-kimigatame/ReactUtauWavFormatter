@@ -16,6 +16,7 @@ export const DownloadButton: React.FC<Props> = (props) => {
         sx={{ textTransform: "none" }}
         disabled={props.zip === null}
         onClick={onButtonClick}
+        href={props.zip===null?"":props.zip}
       >
         <Typography>zipダウンロード</Typography>
       </Button>

@@ -13,11 +13,11 @@ export const LogPaper: React.FC<Props> = (props) => {
         <Divider />
         {props.logs.length !== 0 && (
           <>
-            {props.logs.map((line) => (
-              <>
-                <Typography variant="body2">{line}</Typography>
-                <Divider />
-              </>
+            {props.logs.map((line,i) => (
+              <Box key={"l_"+i}>
+                <Typography variant="body2" sx={{m:1}}>{line}</Typography>
+                {line==="" && <Divider />}
+              </Box>
             ))}
           </>
         )}
