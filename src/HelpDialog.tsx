@@ -10,6 +10,9 @@ import Divider from "@mui/material/Divider";
 
 import { product_name } from "./settings/setting";
 
+/**
+ * このアプリの説明を表示するダイアログ
+ *  */
 export const HelpDialog: React.FC<Props> = (props) => {
   return (
     <>

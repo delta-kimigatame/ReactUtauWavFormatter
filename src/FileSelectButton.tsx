@@ -8,6 +8,10 @@ import JSZip from "jszip";
 import { Wave } from "utauwav";
 import { NormalizeJP } from "./lib/FilenameNormalize";
 
+/**
+ * zipファイルを選択するボタン。
+ * zipファイル選択後、処理完了までdisableになる。
+ *  */
 export const FileSelectButton: React.FC<Props> = (props) => {
   const inputRef = React.useRef(null);
   const [buttonText, setButtonText] =

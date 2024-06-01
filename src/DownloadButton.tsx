@@ -4,6 +4,9 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
+/**
+ * 処理完了したzipをダウンロードするボタン
+ *  */
 export const DownloadButton: React.FC<Props> = (props) => {
   const onButtonClick = () => {};
 

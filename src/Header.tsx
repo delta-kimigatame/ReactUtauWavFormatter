@@ -14,6 +14,10 @@ import Box from "@mui/material/Box";
 import { product_name } from "./settings/setting";
 import { HelpDialog } from "./HelpDialog";
 
+/**
+ * ヘッダ。
+ * ライトモード・ダークモードを切り替えるボタンを有する。
+ *  */
 export const Header: React.FC<Props> = (props) => {
   const [dialogOpen, setDialogOpen] = React.useState<boolean>(false);
   return (

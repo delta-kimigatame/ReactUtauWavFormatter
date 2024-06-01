@@ -5,6 +5,9 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider/Divider";
 
+/**
+ * wav解析の実行結果を表示する。
+ *  */
 export const LogPaper: React.FC<Props> = (props) => {
   return (
     <Paper sx={{ flexGrow: 1, m: 2, p: 1 }} elevation={3}>
@@ -26,6 +29,9 @@ export const LogPaper: React.FC<Props> = (props) => {
   );
 };
 
+/**
+ * @param logs 表示するログ、1行毎にArrayに格納。セクション毎に空の文字列を格納。
+ */
 type Props = {
   logs: Array<string>;
 };

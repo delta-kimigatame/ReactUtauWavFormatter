@@ -1,8 +1,10 @@
-/**全体のテーマを設定する。 */
 import { deepPurple, grey, blueGrey, red } from "@mui/material/colors";
 import { ThemeOptions } from "@mui/material/styles";
 import { PaletteMode } from "@mui/material";
 
+/**
+ * 全体のテーマを設定する。
+ *  */
 export const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
   palette: {
     mode,
