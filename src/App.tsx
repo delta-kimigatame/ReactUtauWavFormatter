@@ -6,6 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { useCookies } from "react-cookie";
 
 import { getDesignTokens } from "./theme";
+import { Header } from "./Header";
 
 /**
  * Reactのエンドポイント
@@ -36,10 +37,11 @@ export const App: React.FC = () => {
     []
   );
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+  React.useMemo(() => setCookie("mode", mode), [mode]);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div>Hello world!</div>
+      <Header mode={mode} setMode={setMode} />
     </ThemeProvider>
   );
 };
