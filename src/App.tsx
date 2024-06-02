@@ -59,6 +59,15 @@ export const App: React.FC = () => {
           setZip={setZip}
           logs={logs}
           setLogs={setLogs}
+          windows={false}
+        />
+        <FileSelectButton
+          processing={processing}
+          setProcessing={setProcessing}
+          setZip={setZip}
+          logs={logs}
+          setLogs={setLogs}
+          windows={true}
         />
         <DownloadButton zip={zip} />
       </Paper>

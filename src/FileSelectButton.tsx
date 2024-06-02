@@ -15,18 +15,28 @@ import { NormalizeJP } from "./lib/FilenameNormalize";
 export const FileSelectButton: React.FC<Props> = (props) => {
   const inputRef = React.useRef(null);
   const [buttonText, setButtonText] =
-    React.useState<string>("wav入り zipを選択");
+    React.useState<string>(props.windows?"windowsで作ったzipを選択":"android/iOS/macで作ったzipを選択");
 
   const onFileInputChange = (event) => {
     if (!event.target.files) return;
     props.setProcessing(true);
     const zip = new JSZip();
     const newZip = new JSZip();
+    const td = new TextDecoder("Shift_JIS");
     const logs = props.logs.slice();
-    zip.loadAsync(event.target.files[0]).then((z) => {
-        setButtonText("zip解析中")
-      ZipExtract(z.files, 0, newZip, logs);
-    });
+    if(props.windows){
+      zip.loadAsync(event.target.files[0],{
+        decodeFileName:(fileNameBinary:Uint8Array)=>td.decode(fileNameBinary)
+      }).then((z) => {
+        setButtonText("zip解析中");
+        ZipExtract(z.files, 0, newZip, logs);
+      });
+    }else{
+      zip.loadAsync(event.target.files[0]).then((z) => {
+        setButtonText("zip解析中");
+        ZipExtract(z.files, 0, newZip, logs);
+      });
+    }
   };
 
   const ZipExtract = (
@@ -77,14 +87,14 @@ export const FileSelectButton: React.FC<Props> = (props) => {
       if (index < Object.keys(files).length - 1) {
         ZipExtract(files, index + 1, newZip, newLogs);
       } else {
-        setButtonText("zip再圧縮中")
+        setButtonText("zip再圧縮中");
         newZip.generateAsync({ type: "uint8array" }).then((result) => {
           const zipFile = new Blob([result], {
             type: "application/zip",
           });
           props.setZip(URL.createObjectURL(zipFile));
           props.setProcessing(false);
-          setButtonText("wav入り zipを選択")
+          setButtonText(props.windows?"windowsで作ったzipを選択":"android/iOS/macで作ったzipを選択");
         });
       }
     });
@@ -126,4 +136,5 @@ type Props = {
   setZip: React.Dispatch<React.SetStateAction<string | null>>;
   logs: Array<string>;
   setLogs: React.Dispatch<React.SetStateAction<Array<string>>>;
+  windows: boolean;
 };

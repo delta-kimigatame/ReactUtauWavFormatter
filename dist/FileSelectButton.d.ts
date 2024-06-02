@@ -10,5 +10,6 @@ type Props = {
     setZip: React.Dispatch<React.SetStateAction<string | null>>;
     logs: Array<string>;
     setLogs: React.Dispatch<React.SetStateAction<Array<string>>>;
+    windows: boolean;
 };
 export {};
