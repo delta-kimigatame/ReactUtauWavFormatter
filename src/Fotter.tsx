@@ -5,6 +5,9 @@ import Divider from "@mui/material/Divider";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import XIcon from "@mui/icons-material/X";
+
+import { XButton } from "./XButton";
 
 /**
  * フッタ
@@ -51,7 +54,9 @@ export const Footer: React.FC<Props> = (props) => {
           }}
         >
           <Typography variant="caption">
-            UTAUは飴屋／菖蒲氏によって公開されている、Windows向けに作成された歌声合成ソフトウェアです。<br /><br />
+            UTAUは飴屋／菖蒲氏によって公開されている、Windows向けに作成された歌声合成ソフトウェアです。
+            <br />
+            <br />
             本ソフトウェアはUTAU公式とは無関係です。
           </Typography>
           <br />
@@ -69,6 +74,15 @@ export const Footer: React.FC<Props> = (props) => {
             <br />
             <br />
           </Typography>
+          <XButton
+            startIcon={<XIcon />}
+            href={
+              "https://twitter.com/intent/tweet?text=きみがためtools - UTAU wav最適化 - https://k-uta.jp/UtauWavFormatter/"
+            }
+            target="blank_"
+          >
+            共有
+          </XButton>
         </Box>
       </Box>
     </>
