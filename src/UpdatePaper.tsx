@@ -10,6 +10,7 @@ import Divider from "@mui/material/Divider/Divider";
  *  */
 export const UpdatePaper: React.FC = () => {
   const updateLogs: Array<string> = new Array(
+    "2024/6/12 サンプリングレートの変更に失敗する場合がある不具合の修正",
     "2024/6/2 日本語windowsで作成したzipが文字化けする不具合の修正",
     "2024/6/1 初版公開",
   );
