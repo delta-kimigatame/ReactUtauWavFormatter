@@ -9,6 +9,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Divider from "@mui/material/Divider";
 
 import { product_name } from "./settings/setting";
+import { HelpContents } from "./HelpContents";
 
 /**
  * このアプリの説明を表示するダイアログ
@@ -38,41 +39,7 @@ export const HelpDialog: React.FC<Props> = (props) => {
         </IconButton>
         <Divider />
         <DialogContent>
-          <Box sx={{ p: 1 }}>
-            <Typography variant="h6">これは何?</Typography>
-            <Box sx={{ pl: 3 }}>
-              <Typography variant="body2">
-                wavデータをUTAUで使用できる形式に変換します。
-              </Typography>
-            </Box>
-          </Box>
-          <Divider />
-          <Box sx={{ p: 1 }}>
-            <Typography variant="h6">使い方</Typography>
-            <Typography variant="body2">
-              <ol>
-                <li>wavファイルが入ったzipファイルを用意する。</li>
-                <li>「[wav入り zipを選択]ボタンを押す。</li>
-                <li>準備したzipを選ぶ。</li>
-                <li>変換が終わるまでしばらく待つ</li>
-                <li>
-                  [zipダウンロード]ボタンを押すと、変換したzipをダウンロードできる。
-                </li>
-              </ol>
-            </Typography>
-          </Box>
-          <Divider />
-          <Box sx={{ p: 1 }}>
-            <Typography variant="h6">最適なwavとは</Typography>
-            <Typography variant="body2">
-              <ul>
-                <li>モノラル/44,100Hz/16bitのデータ</li>
-                <li>wavのヘッダに余計なデータが入っていない。</li>
-                <li>DCオフセットの除去</li>
-                <li>(iOSで録音した場合)windows用にファイル名を正規化</li>
-              </ul>
-            </Typography>
-          </Box>
+          <HelpContents />
         </DialogContent>
       </Dialog>
     </>

@@ -14,6 +14,7 @@ import { DownloadButton } from "./DownloadButton";
 import { LogPaper } from "./LogPaper";
 import { Footer } from "./Fotter";
 import { UpdatePaper } from "./UpdatePaper";
+import { HelpContents } from "./HelpContents";
 
 /**
  * Reactのエンドポイント
@@ -72,9 +73,12 @@ export const App: React.FC = () => {
         />
         <DownloadButton zip={zip} />
       </Paper>
+      <Paper sx={{ flexGrow: 1, m: 2, p: 1 }} elevation={3}>
+        <HelpContents />
+      </Paper>
       <LogPaper logs={logs} />
       <UpdatePaper />
-      <Footer theme={theme}/>
+      <Footer theme={theme} />
     </ThemeProvider>
   );
 };
