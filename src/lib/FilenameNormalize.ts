@@ -54,6 +54,7 @@ export const NormalizeJP = (value: string): string => {
     /プ/g,
     /ペ/g,
     /ポ/g,
+    /ヴ/g,
   ];
   const nfcTxt = [
     "が",
@@ -106,6 +107,7 @@ export const NormalizeJP = (value: string): string => {
     "プ",
     "ペ",
     "ポ",
+    "ヴ",
   ];
   for (let i = 0; i < nfdTxt.length; i++) {
     value = value.replace(nfdTxt[i], nfcTxt[i]);

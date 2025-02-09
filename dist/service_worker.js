@@ -1,4 +1,4 @@
-const cacheName = "UtauWavFormatter_20240615";
+const cacheName = "UtauWavFormatter_20250209";
 const urlsToCache = ["/"];
 self.addEventListener("install", (e) => {
   e.waitUntil(
