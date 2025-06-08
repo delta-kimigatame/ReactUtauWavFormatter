@@ -10,6 +10,7 @@ import Divider from "@mui/material/Divider/Divider";
  *  */
 export const UpdatePaper: React.FC = () => {
   const updateLogs: Array<string> = new Array(
+    "2025/6/8 wavファイルの末尾にメタデータが含まれていると読み込めない不具合の修正",
     "2025/2/9 ヴを正規化できない不具合の修正",
     "2024/6/23 もともと44100Hzのwavを読み込んだとき、wavの中身が空になってしまうことがある不具合の修正",
     "2024/6/12 サンプリングレートの変更に失敗する場合がある不具合の修正",

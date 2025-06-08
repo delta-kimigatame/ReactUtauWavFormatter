@@ -2,3 +2,6 @@
 /imgtmp
 src/drive_key.tsx
 drive_key.tsx
+deploy.yml
+ansible.cfg
+hosts
